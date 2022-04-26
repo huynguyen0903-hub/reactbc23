@@ -6,6 +6,12 @@ import { connect } from 'react-redux';
     return (
       <div className='container'>
           <p>{this.props.number}</p>
+          <button onClick={()=>{
+              this.props.tangGiamSoLuong(1)
+          }}>+</button>
+          <button onClick={()=>{
+              this.props.tangGiamSoLuong(- 1)
+          }}>-</button>
       </div>
     )
   }
@@ -19,12 +25,18 @@ const mapStateToProps = (rootReducer) => {
 
 const mapDispatchtoProps = (dispatch) => {
     return{
-        tangGiamSoLuong: () => {
-            
+        tangGiamSoLuong: (soLuong) => {
+            // console.log(soLuong);
+            const action = {
+                type:'TANG_GIAM_SO_LUONG',//redux bắt buộc phải có
+                soLuong: soLuong
+            }
+            //đưa dữ liệu lên redux
+            dispatch(action);
         }
     }
 }
 
-export default connect(mapStateToProps)(TangGiamSoLuong);
+export default connect(mapStateToProps,mapDispatchtoProps)(TangGiamSoLuong);
 
 
