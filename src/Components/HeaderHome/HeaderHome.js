@@ -94,7 +94,44 @@ export default class HeaderHome extends Component {
                 <NavLink className="dropdown-item" to="/lifecycle">
                   Life Cycle
                 </NavLink>
-               
+                <NavLink className="dropdown-item" to="/useState">
+                  useState
+                </NavLink>
+                <NavLink className="dropdown-item" to="/useEffect">
+                  useeffect
+                </NavLink>
+                <NavLink className="dropdown-item" to="/apircc">
+                  App RCC
+                </NavLink>
+                <NavLink className="dropdown-item" to="/apirfc">
+                  App RFC 
+                </NavLink>
+                <NavLink className="dropdown-item" to="/usecallback">
+                  Demo usecallback
+                </NavLink>
+                <NavLink className="dropdown-item" to="/usememo">
+                  Demo usememo
+                </NavLink>
+                <NavLink className="dropdown-item" to="/useref">
+                  Demo useref
+                </NavLink>
+              </div>
+            </li>
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="dropdownId"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Redux thunk middlewave
+              </a>
+              <div className="dropdown-menu" aria-labelledby="dropdownId">
+              <NavLink className="dropdown-item" to="/todolistapp">
+                 To do list app
+                </NavLink>
               </div>
             </li>
           </ul>

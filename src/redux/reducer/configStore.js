@@ -1,11 +1,15 @@
-import { combineReducers, createStore } from "redux";
+import { combineReducers, createStore, compose, applyMiddleware } from "redux";
 import { gameXucXacReducer } from "./gameXucXacReducer";
 import { gioHangReducer } from "./gioHangReducer";
 import { stateNumber } from "./numberReducer";
 import { stateImgCar } from "./stateImgCarReducer";
 import BaiTapDatVeReducer from "./BaiTapDatVeReducer";
 import { quanLyNguoiDungReducer } from "./quanLyNguoiDungReducer";
-
+import {tasksReducer} from './tasksReducer'
+import { toDoListReducer } from "./toDoListReducer";
+import thunk from "redux-thunk";
+import {composeWithDevTools} from 'redux-devtools-extension'
+//import redux thunk
 
 const rootReducer = combineReducers({
   stateNumber: stateNumber,
@@ -13,10 +17,12 @@ const rootReducer = combineReducers({
   gioHangReducer: gioHangReducer,
   gameXucXacReducer,
   BaiTapDatVeReducer,
-  quanLyNguoiDungReducer:quanLyNguoiDungReducer
+  quanLyNguoiDungReducer:quanLyNguoiDungReducer,
+  tasksReducer,
+  toDoListReducer
 });
 
-export const store = createStore(
-  rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const middleware = [
+  thunk,
+];
+export const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(...middleware)));

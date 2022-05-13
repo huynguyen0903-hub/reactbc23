@@ -33,32 +33,53 @@ import Detail from './pages/Detail/Detail';
 import Search from './pages/Search/Search';
 import BaiTapQuanLyNguoiDung from './pages/BaiTapQuanLyNguoiDung/BaiTapQuanLyNguoiDung';
 import LifeCycle from './pages/LifeCycle/LifeCycle';
+import DemoUseState from './hooks/DemoUseState/DemoUseState';
+import DemoUseEffect from './hooks/DemoUseEffect/DemoUseEffect';
+import ApiRcc from './pages/Api/DemoApi/ApiRcc';
+import ApiRfc from './pages/Api/DemoApi/ApiRfc';
+import CustomHooks from './hooks/CustomHooks/CustomHooks'
+import TangGIamSoLuongHooks from './DemoRedux/TangGIamSoLuongHooks/TangGIamSoLuongHooks'
+import ApiReduxHooks from './pages/Api/DemoApi/ApiReduxHooks';
+import DemoUseCallback from './hooks/DemoUseCallback/DemoUseCallback';
+import DemoUseMemo from './hooks/DemoUseMemo/DemoUseMemo';
+import DemoUseRef from './hooks/DemoUseRef/DemoUseRef';
+import ToDoListApp from './pages/DemoThunk/ToDoListApp';
 function App() {
   return (
-    <BaiTapBookingTicket/>
-    // <BrowserRouter>
-    // {/* <HeaderHome /> */}
-    // <HeaderHome/>
-    // <Switch>
-    //   <Route exact path={'/home'} render={(propsRoute)=>{//propsRoute: this.props.history, this.props.location, this.props.match
-    //       return <div>
-    //         {/* <HeaderHome/> */}
-    //         <Home {...propsRoute} />    
-    //       </div>
-    //   }} />
-    //   <Route exact path={'/contact'} component={Contact} />
-    //   <Route exact path={'/about'} component={About} />
-    //   <Route exact path={'/login'} component={Login} />
-    //   <Route exact path={'/register'} component={Register} />
-    //   <Route exact path={'/profile'} component={Profile} />
-    //   <Route exact path={'/search'} component={Search} />
-    //   <Route exact path={'/detail/:postid'} component={Detail} />
-    //   <Route exact path={'/btqlnd'} component={BaiTapQuanLyNguoiDung} />
-    //   <Route exact path={'/lifecycle'} component={LifeCycle} />
-
-    //   <Route exact path={'/'} component={Home} />
-    //   </Switch>
-    // </BrowserRouter>
+    
+    <BrowserRouter>
+    {/* <HeaderHome /> */}
+    <HeaderHome/>
+    <Switch>
+      <Route exact path={'/home'} render={(propsRoute)=>{//propsRoute: this.props.history, this.props.location, this.props.match
+          return <div>
+            {/* <HeaderHome/> */}
+            <Home {...propsRoute} />    
+          </div>
+      }} />
+      <Route exact path={'/contact'} component={Contact} />
+      <Route exact path={'/about'} component={About} />
+      <Route exact path={'/login'} component={Login} />
+      <Route exact path={'/register'} component={Register} />
+      <Route exact path={'/profile'} component={Profile} />
+      <Route exact path={'/search'} component={Search} />
+      <Route exact path={'/detail/:postid'} component={Detail} />
+      <Route exact path={'/btqlnd'} component={BaiTapQuanLyNguoiDung} />
+      <Route exact path={'/lifecycle'} component={LifeCycle} />
+      <Route exact path={'/usestate'} component={DemoUseState} />
+      <Route exact path={'/useeffect'} component={DemoUseEffect} />
+      <Route exact path={'/apircc'} component={ApiRcc} />
+      <Route exact path={'/apirfc'} component={ApiRfc} />
+      <Route exact path={'/customhook'} component={CustomHooks} />
+      <Route exact path={'/reduxhooks'} component={TangGIamSoLuongHooks} />
+      <Route exact path={'/apireduxhooks'} component={ApiReduxHooks} />
+      <Route exact path={'/usecallback'} component={DemoUseCallback} />
+      <Route exact path={'/usememo'} component={DemoUseMemo} />
+      <Route exact path={'/useref'} component={DemoUseRef} />
+      <Route exact path={'/todolistapp'} component={ToDoListApp} />
+      <Route exact path={'/'} component={Home} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
